@@ -25,8 +25,9 @@ def call(Map param){
 			}
 			stage('Deliver') {
 				steps {
-					withEnv(['IPADD='+param.ip])
-					sh(libraryResource('deliver.sh'))
+					withEnv(['IPADD='+param.ip]){
+						sh(libraryResource('deliver.sh'))
+					}
 				}
 			}
 		}
