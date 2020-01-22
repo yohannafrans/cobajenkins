@@ -25,7 +25,7 @@ def call(Map param){
 			stage('Deliver') {
 				steps {
 					withEnv(['IPADD='+param.ip])
-					sh "sh jenkins/scripts/deliver.sh $param.ip"
+					sh(libraryResource('deliver.sh'))
 				}
 			}
 		}
