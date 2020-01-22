@@ -23,7 +23,7 @@ def call(Map param){
 			}
 			stage('Deliver') {
 				steps {
-					sh "./jenkins/scripts/deliver.sh $param.ip"
+					sh "sh jenkins/scripts/deliver.sh $param.ip"
 				}
 			}
 		}
