@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(){
+def call(Map param){
 	pipeline {
 		agent any
 		stages {
@@ -22,6 +22,7 @@ def call(){
 			stage('Deliver') {
 				steps {
 					sh './jenkins/scripts/deliver.sh'
+					echo param.ip
 				}
 			}
 		}
