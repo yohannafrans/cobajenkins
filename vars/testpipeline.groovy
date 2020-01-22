@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(Map param){
+def call(){
 	pipeline {
 		agent any
 		stages {
