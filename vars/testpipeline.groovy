@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 def call(Map param){
+	def deliverAgent = libraryResource 'deliver.sh'
 	pipeline {
 		agent {
 			label "agent01"
@@ -23,6 +24,7 @@ def call(Map param){
 			}
 			stage('Deliver') {
 				steps {
+					withEnv(['IPADD='+param.ip])
 					sh "sh jenkins/scripts/deliver.sh $param.ip"
 				}
 			}
