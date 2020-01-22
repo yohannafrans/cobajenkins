@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+//def deliverAgent = libraryResource 'deliver.sh'
 
 def call(Map param){
 	def deliverAgent = libraryResource 'deliver.sh'
